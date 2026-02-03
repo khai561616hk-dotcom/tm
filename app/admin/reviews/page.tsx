@@ -81,31 +81,33 @@ export default function ReviewsPage() {
 
     // Load Reviews
     const storedReviews = localStorage.getItem('clinic_reviews')
-    const userReviews = storedReviews ? JSON.parse(storedReviews) : []
 
-    // Chuyển đổi dữ liệu từ form feedback sang format hiển thị đầy đủ
-    const formattedUserReviews = userReviews.map((r: any) => ({
-      id: r.id,
-      branch: r.branch,
-      staff: r.staff,
-      rating: r.averageScore || 0,
-      sentiment: r.averageScore >= 4 ? 'happy' : r.averageScore >= 3 ? 'neutral' : 'sad',
-      tags: r.services || [],
-      comment: r.comment,
-      date: r.createdAt ? r.createdAt.split('T')[0] : new Date().toISOString().split('T')[0],
+    if (storedReviews) {
+      const userReviews = JSON.parse(storedReviews)
+      const formattedUserReviews = userReviews.map((r: any) => ({
+        id: r.id,
+        branch: r.branch,
+        staff: r.staff,
+        rating: r.averageScore || 0, // Handle old format fallback
+        sentiment: r.averageScore ? (r.averageScore >= 4 ? 'happy' : r.averageScore >= 3 ? 'neutral' : 'sad') : (r.sentiment || 'neutral'),
+        tags: r.services || r.tags || [],
+        comment: r.comment,
+        date: r.createdAt ? r.createdAt.split('T')[0] : (r.date || new Date().toISOString().split('T')[0]),
 
-      // Full Info
-      patient: r.customerName || 'Khách hàng',
-      customerCode: r.customerCode || 'N/A',
-      customerPhone: r.customerPhone || 'N/A',
-      customerEmail: r.customerEmail || '',
-      serviceDate: r.serviceDate || '',
-      detailedRatings: r.ratings || {}, // { c1: { score: 5, comment: '...' } }
-      originalData: r // Keep original for modal
-    }))
-
-    // Merge: User reviews first, then mock data
-    setReviews([...formattedUserReviews, ...mockReviews])
+        // Full Info
+        patient: r.customerName || r.patient || 'Khách hàng',
+        customerCode: r.customerCode || 'N/A',
+        customerPhone: r.customerPhone || 'N/A',
+        customerEmail: r.customerEmail || '',
+        serviceDate: r.serviceDate || '',
+        detailedRatings: r.ratings || r.detailedRatings || {},
+        originalData: r // Keep original for modal
+      }))
+      setReviews(formattedUserReviews)
+    } else {
+      // First visit: Load Mock Data
+      setReviews(mockReviews)
+    }
   }, [])
 
   // State cho bộ lọc
