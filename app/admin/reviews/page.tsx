@@ -425,7 +425,7 @@ export default function ReviewsPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-6 space-y-6">
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 space-y-6">
 
         {/* SECTION 1: BỘ LỌC MẠNH MẼ */}
         <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-100">
@@ -450,7 +450,7 @@ export default function ReviewsPage() {
 
           {/* Bulk Actions Bar */}
           {selectedReviews.length > 0 && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-100 rounded-lg flex items-center justify-between animate-in fade-in slide-in-from-top-2">
+            <div className="mb-4 p-3 bg-red-50 border border-red-100 rounded-lg flex flex-wrap items-center justify-between gap-3 animate-in fade-in slide-in-from-top-2">
               <span className="text-sm font-bold text-red-700">Đã chọn {selectedReviews.length} đánh giá</span>
               <button
                 onClick={handleDeleteSelected}
@@ -647,7 +647,7 @@ export default function ReviewsPage() {
               </div>
 
               {paginatedReviews.map(review => (
-                <div key={review.id} className={`rounded-xl shadow-sm p-5 border transition-all hover:shadow-md ${selectedReviews.includes(review.id) ? 'bg-blue-50 border-blue-200' : 'bg-white border-gray-100'}`}>
+                <div key={review.id} className={`rounded-xl shadow-sm p-4 md:p-5 border transition-all hover:shadow-md ${selectedReviews.includes(review.id) ? 'bg-blue-50 border-blue-200' : 'bg-white border-gray-100'}`}>
                   <div className="flex flex-col md:flex-row justify-between items-start gap-4">
 
                     <div className="flex items-start gap-3 flex-1">
@@ -661,7 +661,7 @@ export default function ReviewsPage() {
 
                       <div className="flex gap-4 flex-1">
                         {/* Avatar Sentiment */}
-                        <div className="text-4xl flex-shrink-0 bg-gray-50 w-16 h-16 flex items-center justify-center rounded-2xl">
+                        <div className="text-3xl md:text-4xl flex-shrink-0 bg-gray-50 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-2xl">
                           {getSentimentEmoji(review.sentiment)}
                         </div>
 

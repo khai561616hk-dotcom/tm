@@ -228,38 +228,38 @@ export default function Home() {
               <p className="text-sm text-gray-600">Hệ thống Đánh giá Chất lượng</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/admin/branches" className="px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue">
+          <div className="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0 scrollbar-hide w-full md:w-auto">
+            <Link href="/admin/branches" className="px-3 md:px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue whitespace-nowrap">
               Chi nhánh
             </Link>
-            <Link href="/admin/staff" className="px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue">
+            <Link href="/admin/staff" className="px-3 md:px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue whitespace-nowrap">
               Nhân viên
             </Link>
-            <Link href="/admin/leaderboard" className="px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue flex items-center gap-1">
+            <Link href="/admin/leaderboard" className="px-3 md:px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue flex items-center gap-1 whitespace-nowrap">
               <Award className="w-4 h-4" /> BXH
             </Link>
-            <Link href="/admin/reviews" className="px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue">
+            <Link href="/admin/reviews" className="px-3 md:px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue whitespace-nowrap">
               Đánh giá
             </Link>
-            <Link href="/admin/settings" className="px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue flex items-center gap-1">
+            <Link href="/admin/settings" className="px-3 md:px-4 py-2 rounded-lg hover:bg-white/50 transition-all text-sm font-semibold text-gray-700 hover:text-medical-blue flex items-center gap-1 whitespace-nowrap">
               <Settings className="w-4 h-4" /> Cấu hình
             </Link>
-            <Link href="/portal" className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg hover:shadow-lg transition-all text-sm font-semibold flex items-center gap-1">
+            <Link href="/portal" className="px-3 md:px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg hover:shadow-lg transition-all text-sm font-semibold flex items-center gap-1 whitespace-nowrap">
               <Users className="w-4 h-4" /> Portal Khách
             </Link>
-            <div className="text-right">
+            <div className="text-right hidden md:block">
               <p className="text-xs text-gray-500">Tổng Quản lý</p>
               <p className="font-semibold text-gray-800">Admin Dashboard</p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-medical-blue to-soft-teal flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-medical-blue to-soft-teal flex items-center justify-center text-white font-bold flex-shrink-0">
               A
             </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex justify-between items-center mb-8">
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <h2 className="text-xl font-bold text-gray-800">Tổng quan Hoạt động</h2>
           <div className="flex flex-col md:flex-row items-end gap-2">
 
