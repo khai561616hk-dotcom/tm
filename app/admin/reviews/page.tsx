@@ -394,7 +394,7 @@ export default function ReviewsPage() {
               </div>
               {val.comment ? (
                 <p className="text-xs text-gray-600 italic border-t border-gray-200 mt-1 pt-1">
-                  💬 "{val.comment}"
+                  &quot;{val.comment}&quot;
                 </p>
               ) : (
                 <p className="text-[10px] text-gray-400 italic mt-1">(Không có nhận xét thêm)</p>
@@ -699,7 +699,7 @@ export default function ReviewsPage() {
 
                           {/* Main Comment */}
                           <p className="text-gray-700 bg-blue-50/50 p-3 rounded-lg border-l-4 border-blue-200 italic mb-3">
-                            "{review.comment}"
+                            &quot;{review.comment}&quot;
                           </p>
 
                           {/* Files */}
