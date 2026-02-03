@@ -154,7 +154,7 @@ export default function LeaderboardPage() {
     const rest = leaderboardData.slice(3)
 
     return (
-        <div className="p-6 max-w-7xl mx-auto space-y-6">
+        <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
@@ -300,7 +300,7 @@ export default function LeaderboardPage() {
             </div>
 
             {/* List Table */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden overflow-x-auto">
                 <table className="w-full text-left">
                     <thead className="bg-gray-50 border-b border-gray-100 text-xs uppercase text-gray-500 font-semibold">
                         <tr>
